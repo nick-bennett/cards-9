@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.cnm.deepdive.model","l":"Card"},{"p":"edu.cnm.deepdive.model","l":"Suit.Color"},{"p":"edu.cnm.deepdive.model","l":"Deck"},{"p":"edu.cnm.deepdive.model","l":"Rank"},{"p":"edu.cnm.deepdive.model","l":"Suit"},{"p":"edu.cnm.deepdive.controller","l":"Trick"}]
