@@ -1,40 +1,53 @@
 package edu.cnm.deepdive.model;
 
 /**
- * Encapsulates the suits of standard playing cards. The enum includes {@link #symbol()} and {@link
- * #color()} methods, to return the immutable Unicode symbol and {@link Color} enum instance of any
- * suit.
+ * Encapsulates the suits of standard playing cards. This {@code enum} includes {@link #symbol()}
+ * and {@link #color()} methods, to return the Unicode symbol and {@link Color} {@code enum} value
+ * of any suit.
+ *
+ * @author Nicholas Bennett &amp; Deep Dive Coding Java + Android Cohort 9.
  */
 public enum Suit {
 
-  CLUBS, DIAMONDS, HEARTS, SPADES;
+  CLUBS,
+  DIAMONDS,
+  HEARTS,
+  SPADES;
 
   private static final String[] symbols = {"\u2663", "\u2662", "\u2661", "\u2660"};
   private static final Color[] colors = {Color.BLACK, Color.RED, Color.RED, Color.BLACK};
 
   /**
-   * Returns Unicode playing card symbol for this suit.
+   * Returns the Unicode playing card symbol for this suit. This will be one of \u2663, \u2662,
+   * \u2661, and \u2660.
    *
-   * @return Unicode symbol.
+   * <p>See <a href="https://en.wikipedia.org/wiki/Playing_cards_in_Unicode">Playing cards in
+   * Unicode</a> for details.</p>
+   *
+   * @return Unicode suit symbol.
    */
   public String symbol() {
     return symbols[ordinal()];
   }
 
   /**
-   * Returns {@link Color} instance value for this suit.
+   * Returns the {@link Color} {@code enum} value for this suit.
    *
-    * @return {@link Color} value.
+   * @return {@link Color#RED} or {@link Color#BLACK}.
    */
   public Color color() {
     return colors[ordinal()];
   }
 
   /**
-   * Encapsulates the two possible colors (red &amp; black) of playing card suits.
+   * Encapsulates the two possible colors ({@link #RED} &amp; {@link #BLACK}) of standard playing
+   * card suits.
    */
   public enum Color {
-    RED, BLACK
+    /** Color of {@link #DIAMONDS} and {@link #HEARTS}. */
+    RED,
+    /** Color of {@link #CLUBS} and {@link #SPADES}. */
+    BLACK
   }
 
 }

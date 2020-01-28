@@ -15,7 +15,7 @@ public class Card {
   private final int hash;
 
   /**
-   * Initializes the Card instance with the specified {@link Suit} and {@link Rank}.
+   * Initializes this {@code Card} instance with the specified {@link Suit} and {@link Rank}.
    *
    * @param suit {@link Suit} value of card.
    * @param rank {@link Rank} value of card.
@@ -27,19 +27,25 @@ public class Card {
   }
 
   /**
-   * Returns {@link Suit} of this Card instance.
+   * Returns {@link Suit} of this {@code Card} instance.
    */
   public Suit getSuit() {
     return suit;
   }
 
   /**
-   * Returns {@link Rank} of this Card instance.
+   * Returns {@link Rank} of this {@code Card} instance.
    */
   public Rank getRank() {
     return rank;
   }
 
+  /**
+   * Concatenates and returns the values returned by {@link #getRank()}{@link Rank#symbol()
+   * symbol()} and {@link #getSuit()}{@link Suit#symbol() symbol()}.
+   *
+   * @return concatenated {@link Rank} &amp; {@link Suit} symbols.
+   */
   @Override
   public String toString() {
     return rank.symbol() + suit.symbol();
