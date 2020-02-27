@@ -28,7 +28,7 @@ import java.util.Random;
  *
  * @author Nicholas Bennett &amp; Deep Dive Coding Java + Android Cohort 9.
  */
-public class Deck implements Comparator<Card> {
+public class Deck {
 
   private List<Card> cards;
   private List<Card> dealt;
@@ -100,12 +100,7 @@ public class Deck implements Comparator<Card> {
     if (gather) {
       gather();
     }
-    cards.sort(this);
-  }
-
-  @Override
-  public int compare(Card card1, Card card2) {
-    return Comparator.comparing(Card::getSuit).thenComparing(Card::getRank).compare(card1, card2);
+    cards.sort(null);
   }
 
 }
