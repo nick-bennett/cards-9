@@ -15,8 +15,8 @@ class DeckTest {
   void init() {
     Deck d = new Deck();
     Set<Card> check = new HashSet<>();
-    assertEquals(52, d.remaining());
-    for (Card c = d.deal(); c != null; c = d.deal()) {
+    assertEquals(52, d.size());
+    for (Card c = d.draw(); c != null; c = d.draw()) {
       check.add(c);
     }
     assertEquals(52, check.size());
@@ -26,7 +26,7 @@ class DeckTest {
   void deal() {
     Deck d = new Deck();
     int count = 0;
-    for (Card c = d.deal(); c != null; c = d.deal()) {
+    for (Card c = d.draw(); c != null; c = d.draw()) {
       count++;
     }
     assertEquals(52, count);
@@ -39,12 +39,12 @@ class DeckTest {
     List<Card> shuffledList = new LinkedList<>();
     Set<Card> shuffledSet = new HashSet<>();
     Deck d = new Deck();
-    for (Card c = d.deal(); c != null; c = d.deal()) {
+    for (Card c = d.draw(); c != null; c = d.draw()) {
       originalList.add(c);
       originalSet.add(c);
     }
     d.shuffle(new SecureRandom());
-    for (Card c = d.deal(); c != null; c = d.deal()) {
+    for (Card c = d.draw(); c != null; c = d.draw()) {
       shuffledList.add(c);
       shuffledSet.add(c);
     }
@@ -57,19 +57,19 @@ class DeckTest {
     Deck d = new Deck();
     int count = 52;
     do {
-      assertEquals(count, d.remaining());
-      d.deal();
+      assertEquals(count, d.size());
+      d.draw();
       count--;
     } while (count >= 0);
   }
 
   @Test
-  void dealt() {
+  void getDrawn() {
     Deck d = new Deck();
     int count = 0;
     do {
-      assertEquals(count, d.dealt());
-      d.deal();
+      assertEquals(count, d.getDrawn().size());
+      d.draw();
       count++;
     } while (count <= 52);
   }

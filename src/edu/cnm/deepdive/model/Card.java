@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019 Deep Dive Coding/CNM Ingenuity
+ *  Copyright 2020 Deep Dive Coding/CNM Ingenuity, Inc.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public class Card implements Comparable<Card> {
   private final Suit suit;
   private final Rank rank;
   private final int hash;
+  private final String repr;
 
   /**
    * Initializes this {@code Card} instance with the specified {@link Suit} and {@link Rank}.
@@ -40,6 +41,7 @@ public class Card implements Comparable<Card> {
     this.suit = suit;
     this.rank = rank;
     hash = Objects.hash(suit, rank);
+    repr = rank.symbol() + suit.symbol();
   }
 
   /**
@@ -64,7 +66,7 @@ public class Card implements Comparable<Card> {
    */
   @Override
   public String toString() {
-    return rank.symbol() + suit.symbol();
+    return repr;
   }
 
   @Override

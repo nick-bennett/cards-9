@@ -108,11 +108,11 @@ public class Trick {
   private void split() {
     redPile = new LinkedList<>();
     blackPile = new LinkedList<>();
-    for (Card selector = deck.deal(); selector != null; selector = deck.deal()) {
+    for (Card selector = deck.draw(); selector != null; selector = deck.draw()) {
       if (selector.getSuit().color() == Color.BLACK) {
-        blackPile.add(deck.deal());
+        blackPile.add(deck.draw());
       } else {
-        redPile.add(deck.deal());
+        redPile.add(deck.draw());
       }
     }
   }
